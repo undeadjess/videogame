@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://e6trer3bckqc"]
+[gd_scene load_steps=4 format=3 uid="uid://e6trer3bckqc"]
 
-[ext_resource type="Texture2D" uid="uid://ckqk78n1xlt5e" path="res://assets/menu/playButton.jpg" id="1_35dpi"]
-[ext_resource type="Script" path="res://scripts/menu/buttons.gd" id="2_tpxsf"]
+[ext_resource type="Texture2D" uid="uid://cucnvxeyhkaa1" path="res://assets/menu/button-Play.png" id="1_hdngw"]
+[ext_resource type="Texture2D" uid="uid://0ubax5xyee40" path="res://assets/menu/button-options.png" id="2_1gr4n"]
+[ext_resource type="Texture2D" uid="uid://dqgn6aw6lg5cg" path="res://assets/menu/button-exit.png" id="4_0rc0w"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -11,8 +12,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayButton" type="Sprite2D" parent="."]
-position = Vector2(135.5, 88)
-scale = Vector2(0.358333, 0.35)
-texture = ExtResource("1_35dpi")
-script = ExtResource("2_tpxsf")
+[node name="Button-play" type="Sprite2D" parent="."]
+position = Vector2(203, 128.65)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_hdngw")
+
+[node name="Button-options" type="Sprite2D" parent="."]
+position = Vector2(203, 180.65)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_1gr4n")
+
+[node name="Button-exit" type="Sprite2D" parent="."]
+position = Vector2(203, 232.65)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_0rc0w")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1282.0
+offset_bottom = 714.0
