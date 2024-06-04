@@ -1,4 +1,4 @@
-extends Sprite2D
+extends TextureRect
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,8 +8,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_anything_pressed():
-		print("click")
-		# change scene
+	if Input.is_anything_pressed() and (true):
 		get_tree().change_scene_to_file("res://scenes/testScene.tscn")
 	pass
