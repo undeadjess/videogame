@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://bjsfgf7edcrra"]
+[gd_scene load_steps=3 format=3 uid="uid://bjsfgf7edcrra"]
+
+[ext_resource type="PackedScene" uid="uid://djaimhhldoabj" path="res://assets/objects/characters/player.tscn" id="1_ntebr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bc2t0"]
 
 [node name="Map" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_bc2t0")
+
+[node name="Player" parent="." instance=ExtResource("1_ntebr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66302, 0)
