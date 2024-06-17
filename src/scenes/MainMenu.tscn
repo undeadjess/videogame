@@ -1,18 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvg6wk3qv6d36"]
+[gd_scene load_steps=3 format=3 uid="uid://cvg6wk3qv6d36"]
 
-[ext_resource type="Texture2D" uid="uid://cucnvxeyhkaa1" path="res://assets/menu/button-Play.png" id="1_t54w1"]
-[ext_resource type="Texture2D" uid="uid://0ubax5xyee40" path="res://assets/menu/button-options.png" id="2_k7tox"]
-[ext_resource type="Script" path="res://scenes/buttonPlay.gd" id="2_r610v"]
-[ext_resource type="Texture2D" uid="uid://dqgn6aw6lg5cg" path="res://assets/menu/button-exit.png" id="3_wsroq"]
+[ext_resource type="Script" path="res://scripts/menus/mainMenu.gd" id="1_p5mmb"]
+[ext_resource type="Texture2D" uid="uid://m6di58twomf7" path="res://assets/menu/game-splash.png" id="2_nwl6s"]
 
 [node name="mainMenu" type="MarginContainer"]
-custom_minimum_size = Vector2(854, 480)
-offset_right = 1280.0
-offset_bottom = 720.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 60
+script = ExtResource("1_p5mmb")
 
 [node name="menu" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -21,35 +28,38 @@ layout_mode = 2
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
+alignment = 1
 
-[node name="buttonPlay" type="TextureRect" parent="menu/menuList"]
-custom_minimum_size = Vector2(1, 1)
+[node name="TextureRect" type="TextureRect" parent="menu/menuList"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 7
-texture = ExtResource("1_t54w1")
-expand_mode = 2
-stretch_mode = 5
-script = ExtResource("2_r610v")
+texture = ExtResource("2_nwl6s")
+expand_mode = 5
 
-[node name="buttonOptions" type="TextureRect" parent="menu/menuList"]
-custom_minimum_size = Vector2(1, 1)
+[node name="buttonPlay" type="Button" parent="menu/menuList"]
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 7
-texture = ExtResource("2_k7tox")
-expand_mode = 2
-stretch_mode = 5
+text = "Play!"
 
-[node name="buttonExit" type="TextureRect" parent="menu/menuList"]
-custom_minimum_size = Vector2(1, 1)
+[node name="buttonOptions" type="Button" parent="menu/menuList"]
+custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
-texture = ExtResource("3_wsroq")
-expand_mode = 2
-stretch_mode = 5
+text = "Options"
+
+[node name="buttonCredits" type="Button" parent="menu/menuList"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+text = "Credits"
+
+[node name="buttonExit" type="Button" parent="menu/menuList"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+text = "Exit"
 
 [node name="TextureRect" type="TextureRect" parent="menu"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[connection signal="pressed" from="menu/menuList/buttonPlay" to="." method="_on_buttonPlay_pressed"]
+[connection signal="pressed" from="menu/menuList/buttonOptions" to="." method="_on_buttonOptions_pressed"]
+[connection signal="pressed" from="menu/menuList/buttonCredits" to="." method="_on_buttonCredits_pressed"]
+[connection signal="pressed" from="menu/menuList/buttonExit" to="." method="_on_buttonExit_pressed"]
