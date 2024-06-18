@@ -16,7 +16,7 @@ func _on_buttonPlay_pressed():
 
 
 func _on_buttonOptions_pressed():
-	print("options button pressed")
+	get_tree().change_scene_to_file("res://scenes/optionsMenu.tscn")
 
 
 func _on_buttonCredits_pressed():
