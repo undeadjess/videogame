@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://by01dlbcyl3rw"]
+
+[ext_resource type="Script" path="res://assets/objects/characters/monster.gd" id="1_t3f5f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dt2g"]
+albedo_color = Color(0.823529, 0.890196, 0.639216, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0la4b"]
+material = SubResource("StandardMaterial3D_0dt2g")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lj2us"]
+
+[node name="Monster" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0118942, 0.99587, 2.08165e-12)
+script = ExtResource("1_t3f5f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+mesh = SubResource("CapsuleMesh_0la4b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+shape = SubResource("CapsuleShape3D_lj2us")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = 0.1
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.651896, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
