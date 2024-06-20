@@ -30,10 +30,6 @@ layout_mode = 2
 size_flags_stretch_ratio = 0.0
 alignment = 1
 
-[node name="buttonToggleFullscreen" type="Button" parent="menu/menuList"]
-layout_mode = 2
-text = "Turn On Fullscreen"
-
 [node name="dropdownFullscreen" type="OptionButton" parent="menu/menuList"]
 layout_mode = 2
 script = ExtResource("2_ancn8")
@@ -53,6 +49,6 @@ text = "Return"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[connection signal="pressed" from="menu/menuList/buttonToggleFullscreen" to="." method="_on_buttonToggleFullscreen_pressed"]
+[connection signal="item_selected" from="menu/menuList/dropdownFullscreen" to="." method="_on_dropdownFullscreen_item_selected"]
 [connection signal="pressed" from="menu/menuList/buttonToggleSounds" to="." method="_on_buttonToggleSounds_pressed"]
 [connection signal="pressed" from="menu/menuList/buttonReturn" to="." method="_on_buttonReturn_pressed"]
