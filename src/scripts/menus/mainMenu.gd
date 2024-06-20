@@ -12,7 +12,7 @@ func _process(delta):
 
 # play button
 func _on_buttonPlay_pressed():
-	get_tree().change_scene_to_file("res://scenes/testScene.tscn")
+	get_tree().change_scene_to_file("res://scenes/map-main.tscn")
 
 
 func _on_buttonOptions_pressed():
