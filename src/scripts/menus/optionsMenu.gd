@@ -33,7 +33,7 @@ func _on_buttonToggleSounds_pressed():
 
 
 func _on_buttonReturn_pressed():
-	get_tree().change_scene_to_file("res://scenes/mainMenu.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/menuMain.tscn")
 
 
 

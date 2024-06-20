@@ -1,7 +1,21 @@
 [gd_scene load_steps=3 format=3 uid="uid://cdswrkef75uyr"]
 
-[ext_resource type="Script" path="res://scripts/menus/optionsMenu.gd" id="1_tyehx"]
-[ext_resource type="Script" path="res://scripts/menus/options/dropdownFullscreen.gd" id="2_ancn8"]
+[ext_resource type="Script" path="res://scripts/menus/optionsMenu.gd" id="1_pux32"]
+
+[sub_resource type="GDScript" id="GDScript_1l37h"]
+script/source = "extends OptionButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+"
 
 [node name="optionsMenu" type="MarginContainer"]
 anchors_preset = 8
@@ -19,7 +33,7 @@ theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 60
-script = ExtResource("1_tyehx")
+script = ExtResource("1_pux32")
 
 [node name="menu" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -32,7 +46,7 @@ alignment = 1
 
 [node name="dropdownFullscreen" type="OptionButton" parent="menu/menuList"]
 layout_mode = 2
-script = ExtResource("2_ancn8")
+script = SubResource("GDScript_1l37h")
 
 [node name="buttonToggleSounds" type="Button" parent="menu/menuList"]
 layout_mode = 2
