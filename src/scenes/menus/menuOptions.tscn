@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdswrkef75uyr"]
+
+[ext_resource type="Script" path="res://scripts/menus/optionsMenu.gd" id="1_pux32"]
+
+[sub_resource type="GDScript" id="GDScript_1l37h"]
+script/source = "extends OptionButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+"
+
+[node name="optionsMenu" type="MarginContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 60
+script = ExtResource("1_pux32")
+
+[node name="menu" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="menuList" type="VBoxContainer" parent="menu"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="dropdownFullscreen" type="OptionButton" parent="menu/menuList"]
+layout_mode = 2
+script = SubResource("GDScript_1l37h")
+
+[node name="buttonToggleSounds" type="Button" parent="menu/menuList"]
+layout_mode = 2
+text = "Turn Off Sounds"
+
+[node name="HSeparator" type="HSeparator" parent="menu/menuList"]
+layout_mode = 2
+
+[node name="buttonReturn" type="Button" parent="menu/menuList"]
+layout_mode = 2
+text = "Return"
+
+[node name="TextureRect" type="TextureRect" parent="menu"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="item_selected" from="menu/menuList/dropdownFullscreen" to="." method="_on_dropdownFullscreen_item_selected"]
+[connection signal="pressed" from="menu/menuList/buttonToggleSounds" to="." method="_on_buttonToggleSounds_pressed"]
+[connection signal="pressed" from="menu/menuList/buttonReturn" to="." method="_on_buttonReturn_pressed"]
