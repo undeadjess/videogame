@@ -11,6 +11,18 @@ const BOB_FREQ = 2.0
 const BOB_AMP = 0.07
 var t_bob = 0.0
 var alive = true
+var inventory = {
+	"keys": {
+		"keys": 0,
+		"bronzeKey": false,
+		"silverKey": false,
+		"goldKey": false
+	},
+	"items": {
+		"shovel": false
+	}
+}
+var stamina = 1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
