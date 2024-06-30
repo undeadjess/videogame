@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7jwfkkbiqkws"]
+[gd_scene load_steps=4 format=3 uid="uid://c7jwfkkbiqkws"]
 
+[ext_resource type="Script" path="res://assets/objects/items/keys/key.gd" id="1_3fkh3"]
 [ext_resource type="ArrayMesh" uid="uid://dqwaxt8aytes5" path="res://assets/objects/items/keys/key.obj" id="1_co2xw"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qgnp5"]
@@ -7,6 +8,7 @@ points = PackedVector3Array(0.526786, -0.0090754, 0.000781745, -0.175487, -0.085
 
 [node name="Key" type="RigidBody3D"]
 collision_layer = 2
+script = ExtResource("1_3fkh3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_co2xw")
