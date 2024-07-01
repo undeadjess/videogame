@@ -92,15 +92,21 @@ func _physics_process(delta):
 	var query = PhysicsRayQueryParameters3D.create(from, to, 4294967295, [get_rid()])
 	var result = space_state.intersect_ray(query)
 	if result != {  }:
-		var object = result.collider;	
-		if "item" in object:
-			if Input.is_action_just_pressed("interact"):
+		var object = result.collider;
+		if Input.is_action_just_pressed("interact"):	
+			print(object)
+			if "item" in object:
 				match object.item:
 					"key":
 						inventory.keys.keys += 1
 					"shovel":
 						inventory.shovel = true
 				object.pickedUp = true
+			elif "obj" in object:
+				match object.obj:
+					"door":
+						object.interact = true
+			
 	
 
 func _headbob(time):
