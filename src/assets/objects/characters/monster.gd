@@ -10,9 +10,9 @@ var time = 0
 
 @onready var nav_agent = $NavigationAgent3D
 @onready var head := $Head
-@onready var camera := $Head/Camera3D
 
 func _physics_process(_delta):
+	rotation.y = 9.4 + atan2(velocity.x, velocity.z)
 	if(startPathing && pathing):
 		time += 0.05
 		var speed = (sin(time) / 2 + 0.5) * speedMultiplier
