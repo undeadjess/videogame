@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3im6rnmx6nk1"]
+
+[ext_resource type="ArrayMesh" uid="uid://o8pbq6xrwrnx" path="res://assets/objects/decorations/door/door.obj" id="1_i0enh"]
+[ext_resource type="Script" path="res://assets/objects/decorations/door/door.gd" id="1_nlhiq"]
+
+[node name="Door" type="StaticBody3D"]
+script = ExtResource("1_nlhiq")
+
+[node name="Part1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 2.08165e-12, 2.08165e-12)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2.08165e-12, 2.08165e-12)
+mesh = ExtResource("1_i0enh")
+skeleton = NodePath("../..")
+
+[node name="Part2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 2.08165e-12, 2.08165e-12)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Part2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 2.08165e-12, 2.08165e-12)
+mesh = ExtResource("1_i0enh")
+skeleton = NodePath("../..")
