@@ -6,7 +6,7 @@ const SPRINT_SPEED = 3.5
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.001
 
-const ITEM_RAY_LENGTH = 1000.0
+const ITEM_RAY_LENGTH = 3.0
 
 #view bobbing
 const BOB_FREQ = 2.0
