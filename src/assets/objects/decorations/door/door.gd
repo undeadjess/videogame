@@ -1,7 +1,7 @@
 extends StaticBody3D
 
 const obj = "door"
-var locked = false
+var locked = true
 var open = false
 var interact = false
 
@@ -10,17 +10,31 @@ var interact = false
 @onready var baseRot = part1.rotation.y
 
 func _physics_process(_delta):
-	if interact && !locked:
+	var player = get_parent_node_3d().player
+	var monster = get_parent_node_3d().monster
+	var playerPos = player.position
+	var monsterPos = monster.position
+	
+	if interact:
 		interact = false
-		open = !open
+		if !locked:
+			if open:
+				if !monsterPos.distance_to(global_position) < 1.4:
+					open = false
+			else:
+				open = true
+		else:
+			if player.inventory.keys.keys > 0:
+				locked = false
+				$Lock.visible = false
+				
 	
-	var playerPos = get_parent_node_3d().player.position
-	if playerPos.distance_to(global_position) < 1.125 && !open:
+	if playerPos.distance_to(global_position) < 1.125 && !open && !locked:
 		open = true
 	
-	var monsterPos = get_parent_node_3d().monster.position
-	if monsterPos.distance_to(global_position) < 1.4 && !open:
+	if monsterPos.distance_to(global_position) < 1.4 && !open && !locked:
+		monster.time = 3
 		open = true
 	
-	part1.rotation.y = baseRot + (1.5 if open else 0)
-	part2.rotation.y = baseRot - (1.5 if open else 0)
+	part1.rotation.y = baseRot + (deg_to_rad(90) if open else 0)
+	part2.rotation.y = baseRot - (deg_to_rad(90) if open else 0)
