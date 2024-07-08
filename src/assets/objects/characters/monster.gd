@@ -24,7 +24,7 @@ func _physics_process(_delta):
 		move_and_slide()
 		var playerPos = nav_agent.target_position
 		var distance = playerPos.distance_to(head.global_position)
-		if(distance < 1.25):
+		if(distance < 1.1):
 			playerCollide.emit()
 			pathing = false
 
