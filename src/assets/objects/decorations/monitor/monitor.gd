@@ -4,5 +4,5 @@ extends StaticBody3D
 
 func _physics_process(_delta):
 	var monster = get_parent_node_3d().monster
-	camera.transform = monster.transform
+	camera.transform = monster.head.global_transform
 	

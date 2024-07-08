@@ -12,7 +12,9 @@ var time = 0
 @onready var head := $Head
 
 func _physics_process(_delta):
-	rotation.y = 9.4 + atan2(velocity.x, velocity.z)
+	var moving = abs(velocity.x) > 0.1 || abs(velocity.z) > 0.1
+	if moving:
+		rotation.y = 9.4 + atan2(velocity.x, velocity.z)
 	if(startPathing && pathing):
 		time += 0.05
 		var speed = (sin(time) / 2 + 0.5) * speedMultiplier

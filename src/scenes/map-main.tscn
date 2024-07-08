@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_42om4"]
 [ext_resource type="ArrayMesh" uid="uid://b54hcwk48l32m" path="res://assets/mapParts/map.obj" id="1_rbnob"]
-[ext_resource type="PackedScene" uid="uid://djaimhhldoabj" path="res://assets/objects/characters/player.tscn" id="2_y4l2b"]
+[ext_resource type="PackedScene" uid="uid://bf2kev05rirwc" path="res://assets/objects/characters/player.tscn" id="2_y4l2b"]
 [ext_resource type="PackedScene" uid="uid://by01dlbcyl3rw" path="res://assets/objects/characters/monster.tscn" id="3_5i17v"]
 [ext_resource type="PackedScene" uid="uid://c7jwfkkbiqkws" path="res://assets/objects/items/keys/key.tscn" id="4_8kkcu"]
 [ext_resource type="PackedScene" uid="uid://broe5nupafbbh" path="res://assets/objects/decorations/monitor/monitor.tscn" id="6_1cqif"]
@@ -67,7 +67,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357837, -3.1719)
 collision_mask = 2
 
 [node name="Monster" parent="." instance=ExtResource("3_5i17v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68363, 0.982372, 5.6549)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.493, 0.982372, 20.7137)
 
 [node name="Monitor" parent="." instance=ExtResource("6_1cqif")]
 transform = Transform3D(0.640592, 0, 0.767881, 0, 1, 0, -0.767881, 0, 0.640592, -2.65041, 1.77921, -2.3268)
