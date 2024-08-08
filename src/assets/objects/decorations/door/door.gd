@@ -1,7 +1,7 @@
 extends StaticBody3D
 
 const obj = "door"
-var locked = true
+var locked = false
 var open = false
 var interact = false
 
@@ -15,6 +15,8 @@ func _physics_process(_delta):
 	var playerPos = player.position
 	var monsterPos = monster.position
 	
+	$Lock.visible = locked
+	
 	if interact:
 		interact = false
 		if !locked:
@@ -26,7 +28,6 @@ func _physics_process(_delta):
 		else:
 			if player.inventory.keys.keys > 0:
 				locked = false
-				$Lock.visible = false
 				
 	
 	if playerPos.distance_to(global_position) < 1.125 && !open && !locked:
