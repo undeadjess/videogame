@@ -17,6 +17,7 @@ size = Vector3(2.4, 3, 0.25)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_nlhiq")
+metadata/locked = false
 
 [node name="Part1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 2.08165e-12, 2.08165e-12)

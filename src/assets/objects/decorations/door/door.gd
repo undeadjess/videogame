@@ -1,13 +1,16 @@
 extends StaticBody3D
 
 const obj = "door"
-var locked = false
 var open = false
 var interact = false
+var locked = false
 
 @onready var part1 = $Part1
 @onready var part2 = $Part2
 @onready var baseRot = part1.rotation.y
+
+func _ready():
+	locked = get_meta("locked", false)
 
 func _physics_process(_delta):
 	var player = get_parent_node_3d().player
