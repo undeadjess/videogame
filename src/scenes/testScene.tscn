@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b142vgbtt22ho"]
 
-[ext_resource type="PackedScene" uid="uid://djaimhhldoabj" path="res://assets/objects/characters/player.tscn" id="1_hf1tu"]
+[ext_resource type="PackedScene" uid="uid://bf2kev05rirwc" path="res://assets/objects/characters/player.tscn" id="1_hf1tu"]
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_qlswj"]
 [ext_resource type="ArrayMesh" uid="uid://bv4btv1q2x84c" path="res://assets/mapParts/testScene/testScene.obj" id="2_rgbnn"]
 [ext_resource type="PackedScene" uid="uid://by01dlbcyl3rw" path="res://assets/objects/characters/monster.tscn" id="3_hom76"]
