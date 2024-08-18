@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://by01dlbcyl3rw"]
+[gd_scene load_steps=8 format=3 uid="uid://by01dlbcyl3rw"]
 
 [ext_resource type="Script" path="res://assets/objects/characters/monster.gd" id="1_t3f5f"]
 
@@ -10,12 +10,23 @@ material = SubResource("StandardMaterial3D_0dt2g")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lj2us"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvsfe"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.235294)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ukqy3"]
+material = SubResource("StandardMaterial3D_qvsfe")
+radius = 0.75
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tctfu"]
+radius = 0.75
+
 [node name="Monster" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0118942, 0.99587, 2.08165e-12)
 script = ExtResource("1_t3f5f")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.08165e-12)
 mesh = SubResource("CapsuleMesh_0la4b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -29,3 +40,15 @@ path_height_offset = 0.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.651896, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+visible = false
+mesh = SubResource("CapsuleMesh_ukqy3")
+skeleton = NodePath("../../MeshInstance3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_tctfu")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

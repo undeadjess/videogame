@@ -22,13 +22,13 @@ func _physics_process(_delta):
 		
 		velocity = velocity.move_toward(new_velocity, 0.25)
 		move_and_slide()
-		var playerPos = nav_agent.target_position
-		var distance = playerPos.distance_to(head.global_position)
-		if(distance < 1.1):
-			playerCollide.emit()
-			pathing = false
 
 	startPathing = true
 
 func update_target_location(target_location):
 	nav_agent.target_position = target_location
+
+func _on_area_3d_body_entered(body: Node3D):
+	if(body.has_meta("player")):
+		playerCollide.emit()
+		pathing = false
