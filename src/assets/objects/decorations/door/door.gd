@@ -26,19 +26,15 @@ func _physics_process(_delta):
 				if open:
 					if !monsterPos.distance_to(global_position) < 1.4:
 						open = false
+						$AnimationPlayer.play("close")
 				else:
+					$AnimationPlayer.play("open")
 					open = true
 			else:
 				if player.inventory.keys.keys > 0:
 					locked = false
-					
-		
-		if playerPos.distance_to(global_position) < 1.125 && !open && !locked:
-			open = true
 		
 		if monsterPos.distance_to(global_position) < 1.4 && !open && !locked:
 			monster.time = 3
 			open = true
-		
-		part1.rotation.y = baseRot + (deg_to_rad(90) if open else 0)
-		part2.rotation.y = baseRot - (deg_to_rad(90) if open else 0)
+			$AnimationPlayer.play("open")

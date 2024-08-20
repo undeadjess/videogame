@@ -4,8 +4,8 @@
 [ext_resource type="ArrayMesh" uid="uid://b54hcwk48l32m" path="res://assets/mapParts/map.obj" id="1_rbnob"]
 [ext_resource type="PackedScene" uid="uid://djaimhhldoabj" path="res://assets/objects/characters/player.tscn" id="2_y4l2b"]
 [ext_resource type="PackedScene" uid="uid://by01dlbcyl3rw" path="res://assets/objects/characters/monster.tscn" id="3_5i17v"]
-[ext_resource type="PackedScene" path="res://assets/objects/items/keys/key.tscn" id="4_8kkcu"]
-[ext_resource type="PackedScene" path="res://assets/objects/decorations/monitor/monitor.tscn" id="6_1cqif"]
+[ext_resource type="PackedScene" uid="uid://c7jwfkkbiqkws" path="res://assets/objects/items/keys/key.tscn" id="4_8kkcu"]
+[ext_resource type="PackedScene" uid="uid://broe5nupafbbh" path="res://assets/objects/decorations/monitor/monitor.tscn" id="6_1cqif"]
 [ext_resource type="PackedScene" uid="uid://ly8w05ylvbcu" path="res://assets/objects/decorations/door/door.tscn" id="7_svg1r"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_0k72k"]
@@ -67,16 +67,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.357837, -3.1719)
 collision_mask = 2
 
 [node name="Monster" parent="." instance=ExtResource("3_5i17v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.493, 0.982372, 20.7137)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1971, 0.982372, 20.7137)
 
 [node name="Monitor" parent="." instance=ExtResource("6_1cqif")]
 transform = Transform3D(0.640592, 0, 0.767881, 0, 1, 0, -0.767881, 0, 0.640592, -2.65041, 1.77921, -2.3268)
 
 [node name="Door" parent="." instance=ExtResource("7_svg1r")]
 transform = Transform3D(0.887011, -1.48326e-16, 0.461749, 3.48787e-16, 1, -3.48787e-16, -0.461749, 4.7043e-16, 0.887011, 2.67031, 0, 4.88665)
-locked = true
 
 [node name="Door2" parent="." instance=ExtResource("7_svg1r")]
 transform = Transform3D(0.887011, -1.48326e-16, 0.461749, 3.48787e-16, 1, -3.48787e-16, -0.461749, 4.7043e-16, 0.887011, 5.05871, 0, 9.56813)
+locked = true
 
 [connection signal="playerCollide" from="Monster" to="Player" method="_on_monster_player_collide"]
