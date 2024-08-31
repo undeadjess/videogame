@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://865oiid8k36r"
+path="res://.godot/imported/pole.obj-8c24eaa01ee8fda095d430f45146f64f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pole.obj-8c24eaa01ee8fda095d430f45146f64f.mesh"]
+
+source_file="res://assets/objects/decorations/puzzles/thingy/pole.obj"
+dest_files=["res://.godot/imported/pole.obj-8c24eaa01ee8fda095d430f45146f64f.mesh", "res://.godot/imported/pole.obj-8c24eaa01ee8fda095d430f45146f64f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
