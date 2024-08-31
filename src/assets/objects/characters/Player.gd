@@ -106,9 +106,10 @@ func _physics_process(delta):
 				match object.obj:
 					"door":
 						object.interact = true
+					"ring":
+						object.interact = true
 			
 	
-
 func _headbob(time):
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
