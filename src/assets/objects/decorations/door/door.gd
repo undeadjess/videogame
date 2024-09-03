@@ -1,40 +1,40 @@
+@tool
 extends StaticBody3D
 
 const obj = "door"
-var locked = true
 var open = false
 var interact = false
+
+@export var locked: bool
 
 @onready var part1 = $Part1
 @onready var part2 = $Part2
 @onready var baseRot = part1.rotation.y
 
 func _physics_process(_delta):
-	var player = get_parent_node_3d().player
-	var monster = get_parent_node_3d().monster
-	var playerPos = player.position
-	var monsterPos = monster.position
-	
-	if interact:
-		interact = false
-		if !locked:
-			if open:
-				if !monsterPos.distance_to(global_position) < 1.4:
-					open = false
+	$Lock.visible = locked
+	if !Engine.is_editor_hint():
+		var player = get_parent_node_3d().player
+		var monster = get_parent_node_3d().monster
+		var playerPos = player.position
+		var monsterPos = monster.position
+		
+		
+		if interact:
+			interact = false
+			if !locked:
+				if open:
+					if !monsterPos.distance_to(global_position) < 1.4:
+						open = false
+						$AnimationPlayer.play("close")
+				else:
+					$AnimationPlayer.play("open")
+					open = true
 			else:
-				open = true
-		else:
-			if player.inventory.keys.keys > 0:
-				locked = false
-				$Lock.visible = false
-				
-	
-	if playerPos.distance_to(global_position) < 1.125 && !open && !locked:
-		open = true
-	
-	if monsterPos.distance_to(global_position) < 1.4 && !open && !locked:
-		monster.time = 3
-		open = true
-	
-	part1.rotation.y = baseRot + (deg_to_rad(90) if open else 0)
-	part2.rotation.y = baseRot - (deg_to_rad(90) if open else 0)
+				if player.inventory.keys.keys > 0:
+					locked = false
+		
+		if monsterPos.distance_to(global_position) < 1.4 && !open && !locked:
+			monster.time = 3
+			open = true
+			$AnimationPlayer.play("open")

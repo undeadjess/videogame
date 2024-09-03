@@ -46,9 +46,9 @@ func _unhandled_input(event):
 			head.rotate_y(-event.relative.x * 0.001)
 			camera.rotate_x(-event.relative.y * 0.001)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
-			
-			from = camera.project_ray_origin(event.position)
-			to = from + camera.project_ray_normal(event.position) * ITEM_RAY_LENGTH
+	
+	from = camera.project_ray_origin(get_viewport().get_mouse_position())
+	to = from + camera.project_ray_normal(get_viewport().get_mouse_position()) * ITEM_RAY_LENGTH
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -106,9 +106,10 @@ func _physics_process(delta):
 				match object.obj:
 					"door":
 						object.interact = true
+					"ring":
+						object.interact = true
 			
 	
-
 func _headbob(time):
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
