@@ -14,8 +14,8 @@ var interact = false
 func _physics_process(_delta):
 	$Lock.visible = locked
 	if !Engine.is_editor_hint():
-		var player = get_parent_node_3d().player
-		var monster = get_parent_node_3d().monster
+		var player = get_parent_node_3d().get_parent_node_3d().player
+		var monster = get_parent_node_3d().get_parent_node_3d().monster
 		var playerPos = player.position
 		var monsterPos = monster.position
 		
