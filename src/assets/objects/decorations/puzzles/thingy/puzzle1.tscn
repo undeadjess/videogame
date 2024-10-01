@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2ya3u5h4ekh2"]
+[gd_scene load_steps=13 format=3 uid="uid://b2ya3u5h4ekh2"]
 
+[ext_resource type="Script" path="res://assets/objects/decorations/puzzles/thingy/puzzle1_main.gd" id="1_8djln"]
 [ext_resource type="ArrayMesh" uid="uid://865oiid8k36r" path="res://assets/objects/decorations/puzzles/thingy/pole.obj" id="1_440t0"]
 [ext_resource type="Script" path="res://assets/objects/decorations/puzzles/thingy/puzzle1.gd" id="1_bdwpi"]
 [ext_resource type="ArrayMesh" uid="uid://fvaimnhqbyhg" path="res://assets/objects/decorations/puzzles/thingy/ring.obj" id="2_pve8k"]
@@ -73,6 +74,7 @@ data = PackedVector3Array(0, -1, -1, 0, -1, 0, 0.9511, -1, -0.309, 0.9511, -0.46
 
 [node name="Puzzle1" type="Node3D"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+script = ExtResource("1_8djln")
 
 [node name="Base" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0)
@@ -89,7 +91,7 @@ libraries = {
 }
 
 [node name="Ring1" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.185409, 2.23936e-16, 0.570634, 2.09272e-16, 1, -2.09272e-16, -0.570634, 4.39497e-16, 0.185409, 0, 0, 0)
+transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.6, 0, 0, 0)
 mesh = ExtResource("2_pve8k")
 
 [node name="1" type="StaticBody3D" parent="Ring1"]
