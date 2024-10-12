@@ -2,14 +2,16 @@
 extends StaticBody3D
 
 const obj = "door"
-var open = false
 var interact = false
 
 @export var locked: bool
+@export var open: bool = false
+var visualState = "open" if open else "close"
 
 @onready var part1 = $Part1
 @onready var part2 = $Part2
 @onready var baseRot = part1.rotation.y
+
 
 func _physics_process(_delta):
 	$Lock.visible = locked
@@ -18,7 +20,6 @@ func _physics_process(_delta):
 		var monster = get_parent_node_3d().get_parent_node_3d().monster
 		var playerPos = player.position
 		var monsterPos = monster.position
-		
 		
 		if interact:
 			interact = false
@@ -38,3 +39,17 @@ func _physics_process(_delta):
 			monster.time = 3
 			open = true
 			$AnimationPlayer.play("open")
+	else:
+		if(locked && open):
+			open = 0
+			if(visualState == "open"):
+				$AnimationPlayer.current_animation = "close"
+			
+		if(open && visualState == "close"):
+			$AnimationPlayer.current_animation = "open"
+		elif(!open && visualState == "open"):
+			$AnimationPlayer.current_animation = "close"
+
+
+func _on_animation_player_animation_finished(anim_name: StringName):
+	visualState = anim_name
