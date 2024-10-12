@@ -1,2 +1,13 @@
 # Blender 4.0.2 MTL File: 'map.blend'
 # www.blender.org
+
+newmtl Material.001
+Ns 0.000000
+Ka 0.219512 0.219512 0.219512
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.050000
+d 1.000000
+illum 3
+map_Kd /Users/aliahbosman/Documents/GitHub/videogame/src/assets/textures/bricks.png
+map_Bump -bm 1.000000 /Users/aliahbosman/Documents/GitHub/videogame/src/assets/textures/bricks_n.png

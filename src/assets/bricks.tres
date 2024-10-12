@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://wd7svj6540bv"]
+
+[ext_resource type="Texture2D" uid="uid://brwjbjy5eb8g7" path="res://assets/textures/bricks.png" id="1_nskml"]
+[ext_resource type="Texture2D" uid="uid://2nf0q2u2uyr0" path="res://assets/textures/bricks_n.png" id="2_dfvby"]
+
+[resource]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_nskml")
+metallic = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_dfvby")
+texture_filter = 0
+grow_amount = -7.314
+proximity_fade_distance = 2.6
