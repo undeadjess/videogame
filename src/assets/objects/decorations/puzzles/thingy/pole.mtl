@@ -1,12 +1,13 @@
 # Blender 4.0.2 MTL File: 'pole.blend'
 # www.blender.org
 
-newmtl Material
-Ns 250.000000
-Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.800000 0.800000
+newmtl Stone
+Ns 45.480511
+Ka 0.107543 0.107543 0.107543
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
-illum 2
+illum 3
+map_Kd /Users/aliahbosman/Documents/GitHub/videogame/src/assets/textures/rock.png
+map_Bump -bm 1.000000 /Users/aliahbosman/Documents/GitHub/videogame/src/assets/textures/rock_n.png
