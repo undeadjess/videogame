@@ -1,16 +1,12 @@
 @tool
 extends StaticBody3D
 
-const obj = "door"
+const OBJ = "door"
 var interact = false
 
 @export var locked: bool
 @export var open: bool = false
-var visualState = "open" if open else "close"
-
-@onready var part1 = $Part1
-@onready var part2 = $Part2
-@onready var baseRot = part1.rotation.y
+var visual_state = "open" if open else "close"
 
 
 func _physics_process(_delta):
@@ -40,16 +36,16 @@ func _physics_process(_delta):
 			open = true
 			$AnimationPlayer.play("open")
 	else:
-		if(locked && open):
+		if locked && open:
 			open = 0
-			if(visualState == "open"):
+			if visual_state == "open":
 				$AnimationPlayer.current_animation = "close"
 			
-		if(open && visualState == "close"):
+		if open && visual_state == "close":
 			$AnimationPlayer.current_animation = "open"
-		elif(!open && visualState == "open"):
+		elif !open && visual_state == "open":
 			$AnimationPlayer.current_animation = "close"
 
 
 func _on_animation_player_animation_finished(anim_name: StringName):
-	visualState = anim_name
+	visual_state = anim_name
