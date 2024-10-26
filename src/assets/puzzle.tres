@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dd3ca6pf2o6aw"]
+
+[ext_resource type="Texture2D" uid="uid://v5e2br1obad7" path="res://assets/textures/puzzle.png" id="1_g3f2a"]
+[ext_resource type="Texture2D" uid="uid://biragn3w6dne3" path="res://assets/textures/puzzle_n.png" id="2_jl0eu"]
+
+[resource]
+resource_name = "Material"
+albedo_texture = ExtResource("1_g3f2a")
+metallic = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_jl0eu")
+texture_filter = 2

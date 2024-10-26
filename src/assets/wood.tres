@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://t6jpkavbbv1c"]
+
+[ext_resource type="Texture2D" uid="uid://d2p5fgrlu65yn" path="res://assets/textures/wood.png" id="1_qvkuw"]
+[ext_resource type="Texture2D" uid="uid://bkqslpt0ru5u4" path="res://assets/textures/wood_n.png" id="2_6hbaf"]
+
+[resource]
+resource_name = "Material"
+albedo_texture = ExtResource("1_qvkuw")
+metallic = 0.5
+normal_enabled = true
+normal_texture = ExtResource("2_6hbaf")
+texture_filter = 0

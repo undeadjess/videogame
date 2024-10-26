@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dnugmj7wjc5go"]
+
+[ext_resource type="Texture2D" uid="uid://ctc017pawp5vb" path="res://assets/textures/rock.png" id="1_pfs3l"]
+[ext_resource type="Texture2D" uid="uid://bx2uqkmc28nwy" path="res://assets/textures/rock_n.png" id="2_mllw5"]
+
+[resource]
+resource_name = "Stone"
+albedo_texture = ExtResource("1_pfs3l")
+metallic = 0.84
+roughness = 0.7
+normal_enabled = true
+normal_texture = ExtResource("2_mllw5")
+texture_filter = 2
